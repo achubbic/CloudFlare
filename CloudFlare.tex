@@ -6,6 +6,7 @@
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{array}
 \usepackage{hyperref}
+\usepackage{titlesec} 
 \usepackage{natbib}
 \usepackage[tight,footnotesize]{subfigure}
 \usepackage{url}
@@ -14,6 +15,15 @@
 \usepackage{graphicx}
 
 \begin{document}
+
+%subsection text sticks to right, not below
+\titleformat{\subsection}[runin]
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+%reduce \subsection spacing
+\titlespacing*{\subsection}{pt}{*0.5}{*0}
 
 \title{Workers for Gaming Project Outline}
 \author{Ayden Chubbic}
@@ -35,28 +45,28 @@ Prototyping, Cultural Probes, Consumer Research, User Exerience, Technical Commu
 
 \maketitle
 
-\section{Goals} Generally, what does this project want to accomplish
-    \subsection{Subsection1}Subsection Text!
-    \subsection{Subsection2}Subsection Text!
-    \subsection{Subsection3}Subsection Text!
+\section{Overview}A common problem among cloud-gaming  services like GeForce Now or Google Stadia is that they experience disproportionately longer loading screens compared to their hardware counterparts.
+
+\section{Goals} This outline is intended to provide structure and vision to a CloudFlare Workers service that \textbf{caches} in-game environments so as to \textbf{reduce} loading screen times. The \textbf{End Product} should be lightweight, scalable, and can be deployed in a reasonable time-frame. Note the primary considerations below
+    \subsection{Size.}\hphantom{m}How much overhead does this application create? How can the product be designed in a way that does not create lag for the user?
+    \subsection{Reliability.}\hphantom{m}What kind of resources does this product need to be available around the clock?
+    \subsection{Maintenance.}\hphantom{m}How often does product need to be updated? Will different types of games require there to be multiple versions of the product?
     
-\section{Research} What are the user demands, what will encourage users to use this product?
-    \subsection{Emulate positive behavior}Japanese game makers
-    \subsection{Subsection2}Subsection Text!
-    \subsection{Subsection3}Subsection Text!
-\section{Resources} What tools does your team need to accomplish this task? 
-    \subsection{Subsection1}Subsection Text!
-    \subsection{Subsection2}Subsection Text!
-    \subsection{Subsection3}Subsection Text!
-\section{Prototype} This is our minimum product. It does not include any extravagant features
-    \subsection{Subsection1}Subsection Text!
-    \subsection{Subsection2}Subsection Text!
-    \subsection{Subsection3}Subsection Text!
-\section{Reassess} Text
-    \subsection{Subsection1}Subsection Text!
-    \subsection{Subsection2}Subsection Text!
-    \subsection{Subsection3}Subsection Text!
-\section{Refine} Ask your team the following questions. if \_condition\_, return make the changes and
+\section{Research} This product is aimed towards large multiplayer games. With that in mind: What are the user demands, what will encourage users to use this product?
+    \subsection{Skill Assessment.}\hphantom{m}How good are our people?
+    \subsection{}Subsection Text!
+    \subsection{Subsection3}how to handle updates? shut down certain regions?
+\section{Resources} The team will need to see to each of these items in order to produce a functional product
+    \subsection{Infrastructure.}\hphantom{m}A intermediary server(s) will need to be allocated to cache environments across all supported games.
+    \subsection{Personnel}This project will require solid knowledge of \textbf{WEB FRAMEWORKS}, determine what platform you will use to develop this product and ensure that your team is familiar with it. If need be, recruit new members who are well versed with this technology.
+    \subsection{Financial. }\hphantom{m}This is a large project, use this outline to create a projection of expenses. Once you have a good sense of what a reasonable timeline looks like, clear funding with your department, accounting for the salaries, licenses, and infrastructure you'll need to pay for.
+    
+\section{Prototype} This is our minimum viable product. It does not include any extravagant features. This most basic model capable of at the very least storing video-game environments that can be retrieved by users. This prototype does not need to be efficient, it only needs to work.
+
+\section{Reassess} Reflect on the state of the project. How has your progress matched up with your timeline. Spend time to communicate with your team what went well and what was unproductive. Use this feedback to together consider if any components of the project need to be cut, maybe you are ahead of schedule and have time for additional features. Use this time to adjust your timeline so that the product remains on track for the deployment deadline.
+\section{Refine} Take the changes 
+
+Ask your team the following questions. if \_condition\_, return make the changes and
     \subsection{Subsection1}Subsection Text!
     \subsection{Subsection2}Subsection Text!
     \subsection{Subsection3}Subsection Text!
